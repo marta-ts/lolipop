@@ -1,0 +1,8 @@
+#s3 {
+    background-image: url("../img/grey_new.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100dvh;
+}
+

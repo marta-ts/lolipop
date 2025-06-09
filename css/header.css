@@ -1,0 +1,110 @@
+header.container {
+    padding: 0;
+    background-color: hwb(339 88% 1%);
+}
+
+header.container > .inside {  /* Direct child .inside in .container */
+    padding:0;
+    max-width: 100%;
+}
+
+header .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .col {
+    width: 50%;
+    height: 100dvh;
+}
+
+header .c1 { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+header h1 {
+    margin-top:1em;
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+header .c1>:last-child {
+    margin-bottom: 50px;
+}
+
+.c1 .button {
+    background-image: url("../img/bg_button.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    padding: 5px 30px;
+    min-width: 300px;
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button span {
+    margin: 0;
+}
+
+header .c2 {
+    background-image: url("../img/im1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .c1 .button {
+        min-width: 250px;
+        min-height: 150px;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+    header .row {
+        flex-direction: column;
+    }
+
+    header .col {
+        width: 100%;
+        height: auto;
+    }
+
+    header .c1 {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        order: 2;
+    }
+
+    header .c2 {
+        height: 50dvh;
+        order: 1;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-top: 0.5em;
+    }
+
+    .c1 .button {
+        min-width: 200px;
+        min-height: 120px;
+    }
+}
+
+

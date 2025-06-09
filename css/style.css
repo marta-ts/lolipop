@@ -1,0 +1,61 @@
+/* style.css — Загальні властивості елементів */
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* background-color: #f8dee9; */
+    background: transparent;
+    color: #d30047;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+  }
+html, body {
+    font-family: 'Montserrat', sans-serif;  /* Гарнітура для основного тексту */
+    font-size: 16px;        /* Розмір шрифта основного тексту */
+    line-height: 1.4;       /* Міжрядковий інтервал основного тексту в %/100 */
+    letter-spacing: .002em; /* Міжлітерний інтервал основного тексту збільшений на 2/1000 Em */
+    scroll-behavior: smooth;/* Плавна прокрутка під час переходу за якорем (ancor) */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'FirstTimeWriting';
+}
+    
+h1 { font-size: 4rem; }     /* Висота заголовків у відносних величинах */
+h2 { font-size: 1.5rem; }   /* rem - відносний розмір *(body font-size) */
+h3 { font-size: 1.35rem; }
+
+p {
+    margin-bottom: .75em;   /* Відступ знизу після абзацу */
+    font-family: 'FirstTimeWriting';
+    font-weight: 100;
+}
+
+a {
+    color: var(--lnk-color-1);  /* Основний колір текстових лінків */
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--lnk-color-2);  /* Колір текстових лінків (hover) при наведенні курсору */
+    text-decoration: none;
+}
+
+.img-box svg,
+.img-box img {
+    display: block; /* Відображати зображення (<img>, <svg>) всередині контейнера .img-box як блочний елемент */
+    width: 100%;
+}
+
+/* *************************************************************** */
+
+
+
+
+
+

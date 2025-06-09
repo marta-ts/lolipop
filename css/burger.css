@@ -1,0 +1,63 @@
+.nav-icon {
+  background: transparent;
+  border: none;
+  outline: none;
+  display: none;
+  width: var(--brg-width);   /* Ширина бургера */
+  height: var(--brg-height); /* Висота бургера */
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.nav-icon span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: var(--brg-weight);
+  background-color: var(--nav-color-1);
+  transition: all 0.3s ease;
+  left: 0;
+}
+
+.topfixed .nav-icon span {
+  background-color: var(--brg-color-1);
+}
+
+.nav-icon span:nth-child(1) {
+  top: 0;
+}
+
+.nav-icon span:nth-child(2),
+.nav-icon span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-icon span:nth-child(4) {
+  bottom: 0;
+}
+
+/* Open state */
+.nav-icon.open span {
+  background-color: white;
+}
+
+.nav-icon.open span:nth-child(1),
+.nav-icon.open span:nth-child(4) {
+  opacity: 0;
+}
+
+.nav-icon.open span:nth-child(2) {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-icon.open span:nth-child(3) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+@media screen and (max-width: 767px) {
+  .nav-icon {
+      display: block;
+  }
+}

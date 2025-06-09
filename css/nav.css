@@ -1,0 +1,250 @@
+nav {
+    /* background: var(--bg-nav-1); */
+    background: transparent;
+    /* Колір фону навігаційної панелі 1 */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+    width: 50%;
+    z-index: 95;
+}
+
+nav.topfixed {
+    background: var(--bg-nav-1);
+    /* position: fixed; */
+}
+
+/* nav::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform .1s ease;
+} */
+
+nav.topfixed::before {
+    transform: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* Схема вирівнювання лого та меню (desktop) по основній осі (main axis) */
+    align-items: center;
+    /* Схема вирівнювання лого та меню (desktop) по додатковій осі (cross axis) */
+    margin-left: auto;
+    /* Центрування блоку всередині nav по-горизонталі */
+    margin-right: auto;
+    /* Центрування блоку всередині nav по-горизонталі */
+    max-width: var(--max-width);
+    /* Ширина .nav-inside не більше 1280px */
+    padding: var(--mob-padding);
+    /* Внутрішні відступи */
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.topfixed .navbar {
+    justify-content: space-between;
+    /* Схема вирівнювання лого та меню (desktop) по основній осі (main axis) після прокрутки */
+    /* border-bottom-left-radius: var(--bord-radius); */
+    /* border-bottom-right-radius: var(--bord-radius); */
+    /* background-image: url(../img/image-in-top.jpg); */
+    /* background-color: rgba(10,10,10,.5); */
+    /* background-blend-mode: multiply; */
+    /* background-size: cover; */
+    padding-top: 12px;
+    /* Внутрішні відступи після прокрутки */
+    padding-bottom: 12px;
+    /* Внутрішні відступи після прокрутки */
+}
+
+.logo {
+    display: flex;
+    width: var(--logo-width);
+    line-height: .7;
+    transform: scale(1);
+    transform-origin: left center;
+    align-items: center;
+    /* Вирівнювання по додатковій осі */
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+}
+
+.logo img {
+    max-width: 50%;
+    height: auto;
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+.topfixed .logo {
+    transform: scale(.8);
+    opacity: 1;
+    display: flex;
+}
+
+.logo img {
+    margin-right: 15px;
+}
+
+.logo span {
+    color: var(--logo-color-1);
+    font-size: .8rem;
+    /* 0.85 * font-size body */
+    line-height: 1.4;
+    letter-spacing: .035em;
+    font-weight: 600;
+    text-transform: uppercase;
+    max-width: 80px;
+}
+
+nav .navbar {
+    overflow: visible;
+}
+
+.nav-icon {
+    display: none;
+    z-index: 99;
+}
+
+.navigation a {
+    background-image: url("../img/firstspan.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    color: var(--nav-color-1);
+    /* Основний колір меню */
+    font-size: .9rem;
+    /* Розмір тексту меню */
+    font-weight: 600;
+    /* Накреслення тексту меню */
+    letter-spacing: .025em;
+    padding: 8px 0 18px;
+    margin-left: 32px;
+    text-decoration: none;
+    position: relative;
+    transition: all .3s ease;
+    width: 85px;
+    text-align: center;
+    opacity: .8;
+}
+
+.navigation a:hover {
+    color: var(--nav-color-2);
+    /* Основний колір меню (hover) */
+    opacity: 1;
+}
+
+.topfixed .navigation a {
+    color: var(--nav-color-3);
+    /* Колір меню після прокрутки */
+}
+
+.topfixed .navigation a:hover {
+    color: var(--nav-color-4);
+    /* Колір меню (hover) після прокрутки */
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+.overlay {
+    background-color: #333;
+    opacity: .3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    .nav-icon {
+        display: block;
+        position: relative;
+        z-index: 100;
+        margin-left: 15px;
+    }
+
+    .navigation ul {
+        background-color: var(--bg-nav-2);
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 70vw;
+        height: 100dvh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 80px 20px 20px;
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    }
+
+    .open .navigation ul {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .navigation li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navigation a {
+        color: white;
+        padding: 15px 20px;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        background-image: none;
+        opacity: 0.8;
+        font-size: 1.2rem;
+    }
+
+    .navigation a:hover {
+        opacity: 1;
+        color: var(--nav-color-2);
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 90;
+    }
+
+    .open .overlay {
+        display: block;
+    }
+}
